@@ -40,10 +40,17 @@ void modify_record(sll *ptr)
                                 {
                                         if(strcmp(ptr->name,name)==0)
                                         {
-                                                printf("%d %s %.2f\n",ptr->roll,ptr->name,ptr->marks);
-                                                printf("Enter new name and marks: ");
-                                                scanf("%s %f",ptr->name,&ptr->marks);
-                                        }
+                                                int abc=0;
+                                                printf("---------------------\n%d %s %.2f\n------------------------\n",ptr->roll,ptr->name,ptr->marks);
+                                                printf("Press 1 to modify this record\n");
+                                                printf("Press 0 to search next\n");
+                                                scanf("%d",&abc);
+                                                if(abc)
+                                                {
+                                                        printf("Enter new name and marks: ");
+                                                        scanf("%s %f",ptr->name,&ptr->marks);
+                                                        printf("-------------------\nRecord modified  sucessfully\n------------------------\n");
+                                                }                                       }
                                         ptr=ptr->next;
                                 }
 
@@ -59,9 +66,16 @@ void modify_record(sll *ptr)
                                 {
                                         if(ptr->marks==marks)
                                         {
-                                                printf("%d %s %.2f\n",ptr->roll,ptr->name,ptr->marks);
-                                                printf("Enter new name and marks: ");
-                                                scanf("%s %f",ptr->name,&ptr->marks);
+                                                int abc=0;
+                                                printf("---------------------\n%d %s %.2f\n------------------------\n",ptr->roll,ptr->name,ptr->marks);
+                                                printf("Press 1 to modify this record\n");
+                                                printf("Press 0 to search next\n");
+                                                scanf("%d",&abc);
+                                                if(abc)
+                                                {printf("Enter new name and marks: ");
+                                                        scanf("%s %f",ptr->name,&ptr->marks);
+                                                        printf("-------------------\nRecord modified  sucessfully\n------------------------\n");
+                                                }
                                         }
                                         ptr=ptr->next;
                                 }
