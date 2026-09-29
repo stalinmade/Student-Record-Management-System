@@ -13,6 +13,7 @@ void modify(sll *ptr,int roll)
                 }
                 ptr=ptr->next;
         }
+        printf("--------------------------------------------\nNo record found on the rearch\n-------------------------------------\n");
 }
 void modify_record(sll *ptr)
 {
@@ -42,19 +43,27 @@ void modify_record(sll *ptr)
                                 printf("Enter name to search: ");
                                 scanf("%s",name);
                                 printf("--------------------------------------------\n");
+                                int flag=0;
                                 while(ptr)
                                 {
                                         if(strcmp(ptr->name,name)==0)
                                         {
+                                                flag=1;
                                                 printf("%d %s %f\n",ptr->roll,ptr->name,ptr->marks);
                                         }
                                         ptr=ptr->next;
                                 }
-                                printf("--------------------------------------------\n");
-                                printf("Enter roll number to modify: ");
-                                int num;
-                                scanf("%d",&num);
-                                modify(temp,num);
+                                if(flag==1)
+                                {
+                                        printf("--------------------------------------------\n");
+                                        printf("Enter roll number to modify: ");
+                                        int num;
+                                        scanf("%d",&num);
+                                        modify(temp,num);
+                                }
+                                else
+
+                                        printf("--------------------------------------------\nNo record found on the rearch\n-------------------------------------\n");
                         }
                         break;
                 case 3:
@@ -63,19 +72,27 @@ void modify_record(sll *ptr)
                                 float marks;
                                 printf("Enter marks to search: ");
                                 scanf("%f",&marks);
+                                int flag=0;
                                 while(ptr)
                                 {
                                         if(ptr->marks==marks)
                                         {
+                                                flag=1;
                                                 printf("%d %s %f\n",ptr->roll,ptr->name,ptr->marks);
                                         }
                                         ptr=ptr->next;
                                 }
-                                printf("--------------------------------------------\n");
-                                printf("Enter roll number to modify: ");
-                                int num;
-                                scanf("%d",&num);
-                                modify(temp,num);
+                                if(flag==1)
+                                {
+                                        printf("--------------------------------------------\n");
+                                        printf("Enter roll number to modify: ");
+                                        int num;
+                                        scanf("%d",&num);
+                                        modify(temp,num);
+                                }
+                                else
+
+                                        printf("--------------------------------------------\nNo record found on the rearch\n-------------------------------------\n");
                         }
                         break;
                 default : printf("-----------------\nInvalid choice\n-----------------------\n");
