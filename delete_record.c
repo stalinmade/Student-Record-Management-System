@@ -27,6 +27,7 @@ void delete(sll *ptr,int roll)
                 prev=del;
                 del=del->next;
         }
+        printf("-------------------------------------------\nNo Record found on your search\n-----------------------------------------\n");
 
 }
 void delete_record(sll **ptr)
@@ -63,19 +64,26 @@ void delete_record(sll **ptr)
                                 scanf("%s",name);
                                 sll *del=*ptr;
                                 printf("______________________________________________\n");
+                                int flag=0;
                                 while(del)
                                 {
                                         if(strcmp(del->name,name)==0)
                                         {
+                                                flag=1;
                                                 printf("%d %s %f\n",del->roll,del->name,del->marks);
                                         }
                                         del=del->next;
                                 }
-                                printf("______________________________________________\n");
-                                int roll;
-                                printf("Enter roll number to delete: ");
-                                scanf("%d",&roll);
-                                delete(temp,roll);
+                                if(flag==1)
+                                {
+                                        printf("______________________________________________\n");
+                                        int roll;
+                                        printf("Enter roll number to delete: ");
+                                        scanf("%d",&roll);
+                                        delete(temp,roll);
+                                }
+                                else
+                                        printf("--------------------------------------\nNo Record found on your search\n---------------------------------------------\n");
                         }
                         break;
                 default : printf("------------------------------\nInvalid option\n--------------------------\n");
