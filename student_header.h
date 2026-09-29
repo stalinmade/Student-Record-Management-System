@@ -19,3 +19,5 @@ void save_record(sll *);
 void sort_record(sll *);
 void delete_all(sll **);
 void reverse_link(sll **);
+void delete(sll *,int);
+void modify(sll *,int);
