@@ -2,25 +2,25 @@
 void main()
 {
         sll *head=0;
-        int op;
+        char op;
         while(1)
         {
-                printf("******** STUDENT RECORD MENU *********\n1 : Add new record\n2 : Delete a record\n3 : Show the list\n4 : Modify a record\n5 : Save records\n6 : Exit\n7 : Sort the list\n8 : Delete all the records\n9 : Reverse the list\nEnter your choice: ");
-                scanf("%d",&op);
+                printf("******** STUDENT RECORD MENU *********\na : Add new record\nd : Delete a record\nb : Show the list\nm : Modify a record\ns : Save records\ne : Exit\nc : Sort the list\nf : Delete all the records\nr : Reverse the list\nEnter your choice: ");
+                scanf(" %c",&op);
                 switch(op)
                 {
-                        case 1: add_record(&head); break;
-                        case 2:delete_record(&head); break;
-                        case 3: display_record(head); break;
-                        case 4: modify_record(head); break;
-                        case 5: save_record(head); break;
-                        case 6: save_record(head);
-                                delete_all(&head);
-                                exit(0);
-                                break;
-                        case 7: sort_record(head); break;
-                        case 8:delete_all(&head); break;
-                        case 9:reverse_link(&head); break;
+                        case 'a': add_record(&head); break;
+                        case 'd': display_record(head);delete_record(&head); break;
+                        case 'b': display_record(head); break;
+                        case 'm': modify_record(head); break;
+                        case 's': save_record(head); break;
+                        case 'e': save_record(head);
+                                  delete_all(&head);
+                                  exit(0);
+                                  break;
+                        case 'c': sort_record(head); break;
+                        case 'f': delete_all(&head); break;
+                        case 'r': reverse_link(&head); break;
                         default:printf("-----------------------\nInvalid choice\n-------------------------------\n"); break;
                 }
         }
